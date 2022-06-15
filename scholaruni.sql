@@ -1,0 +1,17 @@
+use employees;
+use scholaruni;scholarship_internshipscholarship_scholarships
+SELECT 
+    YEAR(d.from_date) AS calendar_year,
+    e.gender,
+    COUNT(e.emp_no) AS num_of_employees
+FROM
+    employees e
+        JOIN
+    dept_emp d ON d.emp_no = e.emp_no
+GROUP BY calendar_year , e.gender
+HAVING calendar_year >= 1990;
+
+use scholaruni;
+SET SQL_SAFE_UPDATES = 0;
+delete from project_imagealbum pa where pa.name='L';
+select * from project_image;
